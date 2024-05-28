@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>PHP Hash Generator</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <main>
+            <header>
+                <h1>PHP Hash Generator</h1>
+            </header>
+            <form method="post" @submit.prevent="gerarHash">
+                <div>
+                    <input type="text" v-model="password" maxlength="100">
+                    <button class="btn-green">Hash</button>
+                    <span class="loading" v-if="loading">Loading...</span>
+                </div>                
+                <div class="hash">{{ hash }}</div>
+            </form>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
